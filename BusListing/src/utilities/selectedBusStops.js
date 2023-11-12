@@ -1,0 +1,1 @@
+export const SelectedBusStops = ["BFA3460955AC820C", "5FB1FCAF80F3D97D"]
