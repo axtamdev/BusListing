@@ -1,10 +1,11 @@
+import { AntDesign } from '@expo/vector-icons';
+
 import React from "react";
 import { StyleSheet,SafeAreaView, View, Text } from "react-native";
 import { TouchableOpacity } from "react-native";
 
 const BusListCell = ({itemData, onPress}) => {
-    const {number, destination, busStop, minute} = itemData
-    console.log(itemData)
+    const {number, destination, busStopName, minute} = itemData
 
     return(
         <TouchableOpacity onPress={() => onPress()} activeOpacity={1}>
@@ -14,11 +15,16 @@ const BusListCell = ({itemData, onPress}) => {
           </View>
           <View style={styles.busListCenterCell}>
             <Text style={styles.busListDestination}><Text style={styles.busListDestinationLabel}>往</Text> {destination}</Text>
-            <Text style={styles.busListBusStop}>{busStop}</Text>
+            <Text style={styles.busListBusStop}>{busStopName}</Text>
           </View>
           <View style={styles.busListRightCell}>
-            <Text style={styles.busListEstMins}>{minute}</Text>
-            <Text style={styles.busListMinLabel}>分鍾</Text>
+          {minute !== "!" ? (
+            <>
+              <Text style={styles.busListEstMins}>{minute}</Text>
+              <Text style={styles.busListMinLabel}>分鍾</Text>
+            </>
+          ) : (<AntDesign name="exclamationcircleo" size={24} color="blue" />)}
+        
           </View>
         </View>
         </TouchableOpacity>
@@ -55,10 +61,11 @@ const styles = StyleSheet.create({
       flex: 1,
       flexBasis: '10%',
       justifyContent: 'center',
-      paddingRight: 12
+      paddingRight: 12,
+      alignItems: "flex-end"
     },
     busListNumber:{
-      fontSize: 30,
+      fontSize: 26,
       fontWeight: 'bold'
     },
     busListDestinationLabel:{
