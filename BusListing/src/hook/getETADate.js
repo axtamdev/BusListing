@@ -34,7 +34,7 @@ export const fetchETAData = async ({busStopId, route, service_type}) => {
         const data = await res.json()
         return data
     } catch (error) {
-        // setError('Error')
+        setError('Error')
         throw error
     }
 }

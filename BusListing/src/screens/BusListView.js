@@ -7,7 +7,7 @@ import { RefreshControl } from 'react-native-gesture-handler';
 import { SelectedBusStops } from '../utilities/selectedBusStops';
 
 export default function BusListView({ route }) {
-    const { busStopList, ro } = route.params;
+    const { busStopList } = route.params;
     const [refreshing, setRefreshing] = useState(false)
     const [filteredData, setFilteredData] = useState([])
     const navigation = useNavigation();

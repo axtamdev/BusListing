@@ -2,7 +2,6 @@ import React, {useEffect} from "react";
 import { StyleSheet, View, Text} from "react-native";
 import Map from "./components/Map";
 import ETAListView from "./components/ETAListView";
-// import {getETADate} from '../hook/getETAData';
 import { useGetETADate} from "../hook/getETADate";
 
 const styles = StyleSheet.create({

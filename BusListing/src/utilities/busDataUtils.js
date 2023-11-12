@@ -15,7 +15,6 @@ export const handleData = (busData) => {
       }
     }
 
-
     const existingItem = acc.find((existing) => existing.route === item.route);
     if (!existingItem || minutesDifference < existingItem.minutesDifference) {
       const newItem = {
