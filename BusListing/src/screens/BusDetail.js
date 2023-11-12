@@ -4,23 +4,6 @@ import Map from "./components/Map";
 import ETAListView from "./components/ETAListView";
 import { useGetETADate} from "../hook/getETADate";
 
-const styles = StyleSheet.create({
-    container: {
-        flexDirection: 'column',
-        flex: 1
-    },
-    mapContainer: {
-        flex: 1
-    },
-    border: {
-        height: 4,
-        backgroundColor: 'red',
-    },
-    listContainer: {
-        flex: 1
-    }
-})
-
 export default function BusDetail({route, navigation}){
     const {routeNumber, destination, busStopId, long, lat, busStopName, serviceType} = route.params
     const [etaData] = useGetETADate({busStopId:busStopId, service_type: serviceType, route: routeNumber})
@@ -41,3 +24,20 @@ export default function BusDetail({route, navigation}){
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flexDirection: 'column',
+        flex: 1
+    },
+    mapContainer: {
+        flex: 1
+    },
+    border: {
+        height: 4,
+        backgroundColor: 'red',
+    },
+    listContainer: {
+        flex: 1
+    }
+})
